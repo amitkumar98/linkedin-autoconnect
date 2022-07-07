@@ -1,0 +1,26 @@
+{
+    "name": "LinkedIn AutoConnect",
+    "version": "0.1.0",
+    "description": "Send connection request automatically",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["https://*.linkedin.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.linkedin.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/LinkedInIcon.png",
+        "24": "assets/LinkedInIcon.png",
+        "32": "assets/LinkedInIcon.png"
+      },
+      "default_title": "LinkedIn AutoConnect",
+      "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+}
